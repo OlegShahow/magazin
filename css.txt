@@ -1,0 +1,99 @@
+// Находим все кнопки "В кошик"
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+// Корзина, куда будут добавляться товары
+const cartItemsContainer = document.querySelector('.cart-items');
+const totalPriceElement = document.querySelector('.total-price');
+
+let totalPrice = 0; // Для подсчета общей стоимости корзины
+
+// Функция для добавления товара в корзину
+function addToCart(event) {
+    // Находим текущую карточку товара
+    const card = event.target.closest('.main__card');
+    
+    // Извлекаем данные о товаре
+    const productName = card.querySelector('.product-name').textContent;
+    const productPrice = card.querySelector('.product-price').textContent;
+    const productImage = card.querySelector('.main__card--img img').src;
+    const productDetails = card.querySelector('.card__content').innerHTML;
+    
+    // Добавляем товар в корзину
+    const cartItem = document.createElement('div');
+    cartItem.classList.add('cart-item');
+    
+    cartItem.innerHTML = `
+        <div class="cart-item-img">
+            <img src="${productImage}" alt="${productName}">
+        </div>
+        <div class="cart-item-details">
+            <p><strong>${productName}</strong></p>
+            <p>${productDetails}</p>
+            <p><strong>${productPrice}</strong></p>
+        </div>
+    `;
+    
+    cartItemsContainer.appendChild(cartItem);
+
+    // Обновляем общую стоимость корзины
+    const price = parseFloat(productPrice.replace('uah', '').trim());
+    totalPrice += price;
+    totalPriceElement.textContent = `${totalPrice.toFixed(2)} UAH`;
+}
+
+// Добавляем обработчики для каждой кнопки "В кошик"
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', addToCart);
+});
+
+
+================================================  обьяснение 
+
+
+// Находим все кнопки "В кошик"
+const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+// Корзина, куда будут добавляться товары
+const cartItemsContainer = document.querySelector('.cart-items');
+const totalPriceElement = document.querySelector('.total-price');
+
+let totalPrice = 0; // Для подсчета общей стоимости корзины
+
+// Функция для добавления товара в корзину
+function addToCart(event) {
+    // Находим текущую карточку товара (из которой была нажата кнопка)
+    const card = event.target.closest('.main__card');
+    
+    // Извлекаем данные о товаре из текущей карточки
+    const productName = card.querySelector('.product-name').textContent;
+    const productPrice = card.querySelector('.product-price').textContent;
+    const productImage = card.querySelector('.main__card--img img').src;
+    const productDetails = card.querySelector('.card__content').innerHTML;
+    
+    // Добавляем товар в корзину
+    const cartItem = document.createElement('div');
+    cartItem.classList.add('cart-item');
+    
+    cartItem.innerHTML = `
+        <div class="cart-item-img">
+            <img src="${productImage}" alt="${productName}">
+        </div>
+        <div class="cart-item-details">
+            <p><strong>${productName}</strong></p>
+            <p>${productDetails}</p>
+            <p><strong>${productPrice}</strong></p>
+        </div>
+    `;
+    
+    cartItemsContainer.appendChild(cartItem);
+
+    // Обновляем общую стоимость корзины
+    const price = parseFloat(productPrice.replace(' UAH', '').trim());
+    totalPrice += price;
+    totalPriceElement.textContent = `${totalPrice.toFixed(2)} UAH`;
+}
+
+// Добавляем обработчики для каждой кнопки "В кошик"
+addToCartButtons.forEach(button => {
+    button.addEventListener('click', addToCart);
+});

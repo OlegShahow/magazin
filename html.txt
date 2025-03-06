@@ -1,0 +1,48 @@
+<!-- Карточка товара -->
+<div class="main__card">
+    <div class="main__card--img">
+        <img src="./bu/classic.jpg" alt="Товар">
+    </div>
+    <div class="main__card--name">
+        <p class="product-name">Класичний</p>
+    </div>
+    <div class="main__card--prize">
+        <span class="product-price">000uah</span>
+    </div>
+    <div class="main__card--button">
+        <button class="add-to-cart">В кошик</button>
+    </div>
+    <div class="card__content">
+        <p>Троянди 15 шт.</p>
+        <p>Салал 1 шт.</p>
+        <p>Анемон 15 шт.</p>
+    </div>
+</div>
+
+корзина   
+
+<div class="cart">
+    <h2>Корзина</h2>
+    <div class="cart-items">
+        <!-- Здесь будут отображаться добавленные товары -->
+    </div>
+    <div class="cart-total">
+        <p>Итого: <span class="total-price">0 UAH</span></p>
+    </div>
+</div>
+
+/* Стили для корзины */
+.cart {
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    width: 300px;
+}
+
+.cart-items {
+    margin-bottom: 20px;
+}
+
+.cart-total {
+    font-weight: bold;
+}

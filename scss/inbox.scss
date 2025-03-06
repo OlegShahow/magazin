@@ -1,0 +1,43 @@
+@import "null.scss";
+
+// подключать только если есть в этих файлах данные. пустыми не подключать !!
+// @import "var.scss";
+@import "basestyle.scss";
+
+@function toRem($value) {
+	$baseFontSize: 16;
+	@return ($value/$baseFontSize) * 1rem;
+}
+
+$maxWidth: 1920;
+
+@mixin adaptiveValue($property, $pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$addMobSize: $addSize + $addSize * 0.7;
+
+	@media (min-width: toRem(1920)) {
+		#{$property}: #{$pcSize + px};
+	}
+
+	@media (max-width: toRem(1920)) {
+		@media (max-width: 1920px) {
+			#{$property}: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 767px) / #{$maxWidth}));
+		}
+	}
+}
+// @include adaptiveValue ($property , $pcSize, $mobSize);
+
+[class*="__container"] {
+	max-width: 1680px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+body,
+html {
+	scroll-behavior: smooth;
+}
+
+

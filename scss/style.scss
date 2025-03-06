@@ -1,0 +1,393 @@
+@import "null.scss";
+
+// подключать только если есть в этих файлах данные. пустыми не подключать !!
+// @import "var.scss";
+@import "basestyle.scss";
+
+@function toRem($value) {
+	$baseFontSize: 16;
+	@return ($value/$baseFontSize) * 1rem;
+}
+
+$maxWidth: 1920;
+
+@mixin adaptiveValue($property, $pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$addMobSize: $addSize + $addSize * 0.7;
+
+	@media (min-width: toRem(1920)) {
+		#{$property}: #{$pcSize + px};
+	}
+
+	@media (max-width: toRem(1920)) {
+		@media (max-width: 1920px) {
+			#{$property}: calc(#{$mobSize + px} + #{$addMobSize} * ((100vw - 767px) / #{$maxWidth}));
+		}
+	}
+}
+// @include adaptiveValue ($property , $pcSize, $mobSize);
+
+//.......................................................................................
+
+[class*="__container"] {
+	max-width: 1680px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+// \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+body,
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	position: relative;
+	background-image: url(../fone/bg3.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+	width: 100%;
+	height: 100%;
+}
+
+.wrapper {
+}
+
+.up {
+	position: fixed;
+	width: toRem(50);
+	bottom: toRem(50);
+	right: toRem(40);
+	& img {
+		width: 100%;
+		transform: rotate(180deg);
+	}
+}
+
+.header {
+	&__body {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: toRem(70);
+		display: flex;
+		align-items: center;
+		backdrop-filter: blur(10px); /* Размытие фона */
+		z-index: 100;
+		// border: 1px solid white;
+	}
+	&__container {
+		width: 100%;
+		// border: 1px solid white;
+	}
+	&__nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-around;
+		& p {
+			display: flex;
+			align-items: center;
+			color: black;
+			font-size: toRem(26);
+			font-weight: 900;
+			text-shadow:
+				0px 0px 2px white,
+				2px 2px 6px white,
+				-2px -2px 6px white;
+		}
+		& img {
+			width: toRem(40);
+		}
+	}
+}
+.main {
+	&__body {
+		background-image: url(../fone/fonemain.jpeg);
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		width: 100%;
+		height: 100vh;
+	}
+	&__container {
+		height: 100%;
+		padding: toRem(100) toRem(10);
+		// border: 1px solid white;
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	&__title {
+		position: relative;
+		// border: 1px solid white;
+		& h1 {
+			font-family: "PlayfairDisplay-Regular";
+			text-transform: uppercase;
+			color: #f5ebeb;
+			@include adaptiveValue("font-size", 90, 50);
+			font-weight: 900;
+			letter-spacing: 2px;
+			text-shadow:
+				0px 0px 1px black,
+				2px 2px 1px rgb(252, 251, 251),
+				4px 4px 1px black;
+		}
+		& span {
+			position: absolute;
+			bottom: toRem(-30);
+			right: 30%;
+			text-transform: uppercase;
+			color: #d9597b;
+			text-shadow:
+				0px 0px 2px black,
+				2px 2px 20px white,
+				-2px -2px 20px white;
+			@include adaptiveValue("font-size", 40, 20);
+			font-family: "Shantell Sans", cursive;
+			// font-family: "Caveat", cursive;
+			font-style: italic;
+			font-weight: 900;
+		}
+	}
+	&__box {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		// border: 1px solid white;
+
+		& p {
+			text-transform: uppercase;
+			color: #f5ebeb;
+			@include adaptiveValue("font-size", 40, 20);
+			font-family: "PlayfairDisplay-Italic";
+			margin-bottom: toRem(30);
+			font-weight: 900;
+			padding: toRem(10);
+			backdrop-filter: blur(10px);
+			text-shadow:
+				2px 2px 16px #9f0f35,
+				-2px -2px 16px #8c0e2f;
+			backdrop-filter: blur(10px);
+			&:hover {
+				transform: scale(1.05);
+				text-shadow: 0px 0px 16px white;
+			}
+		}
+	}
+	&__box--textleft {
+		// border: 1px solid white;
+	}
+	&__box--textright {
+		display: flex;
+		flex-direction: column;
+		justify-content: end;
+		// border: 1px solid white;
+		& p {
+			padding: toRem(10);
+			backdrop-filter: blur(10px);
+			@include adaptiveValue("font-size", 40, 20);
+			font-family: "Shantell Sans", cursive;
+			// font-family: "Caveat", cursive;
+			font-style: italic;
+			font-weight: 900;
+			text-shadow:
+				2px 2px 16px #d9597b,
+				-2px -2px 16px #d9597b;
+			&:hover {
+				transform: scale(1);
+				text-shadow:
+					2px 2px 16px #d9597b,
+					-2px -2px 16px #d9597b;
+			}
+		}
+	}
+}
+
+.magazin {
+	padding: toRem(30) 0;
+	background-color: #ffcdb2;
+	&__container {
+		text-align: center;
+		border-left: 6px double #d9597b;
+		border-right: 6px double #d9597b;
+		// background-color: #e5989b;
+
+		& p {
+			font-size: toRem(24);
+			letter-spacing: 2px;
+			line-height: 1.2;
+			text-shadow: 0px 0px 6px #fcfcfc;
+		}
+	}
+}
+.numtoo {
+	background-color: #296248;
+	& p {
+		color: white;
+		text-shadow: 0px 0px 2px black;
+	}
+}
+
+// +++++++++++++++++++++++++++++++++++++++++++++   flover ALL STYLE ++++++++++++++++++++++++++++++++++++++++++++++++++++++=
+.flcontainer {
+	padding: toRem(50) toRem(10);
+	text-align: center;
+}
+.flblock {
+}
+.fltitle {
+	@include adaptiveValue("font-size", 40, 30);
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #a32526;
+	letter-spacing: 2px;
+	// border: 1px solid white;
+}
+.fltext {
+	& p {
+		@include adaptiveValue("font-size", 32, 28);
+		// text-transform: uppercase;
+		font-weight: 400;
+		margin-bottom: toRem(30);
+		letter-spacing: 2px;
+		line-height: 1.3;
+		margin: toRem(30) 0;
+	}
+}
+.flbtn {
+	margin-left: toRem(20);
+	padding: toRem(10);
+	font-size: toRem(24);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: inset 0px 0px 6px #8c0e2f;
+
+	&:hover {
+		box-shadow: 0px 0px 6px #8c0e2f;
+	}
+}
+
+u {
+	border-left: 6px double #a32526;
+	text-decoration: none;
+	padding-left: toRem(10);
+}
+
+// ............................................   .buket    ......................................................................
+
+.main {
+	&__hero {
+	}
+}
+.buket {
+	&__title {
+		& h2 {
+			clip-path: polygon(0% 0%, 50% 0%, 100% 100%, 50% 100%);
+			border-bottom: 7px solid #a32526;
+		}
+	}
+
+	&__container {
+		// backdrop-filter: blur(16px); /* Размытие фона */
+		background-color: white;
+	}
+}
+// .......................................................................................................
+
+.buketbox {
+	&__container {
+		background-color: white;
+	}
+	&__title {
+		& h2 {
+			clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 20% 100%);
+			border-bottom: 7px solid #a32526;
+		}
+	}
+}
+// ..........................................................................................................
+
+.buketsw {
+	&__container {
+		background-color: white;
+	}
+	&__title {
+		& h2 {
+			clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 30% 100%);
+			border-bottom: 7px solid #a32526;
+		}
+	}
+}
+
+// .......................................................................................
+
+.buketkorz {
+	&__container {
+		background-color: white;
+	}
+	&__title {
+		& h2 {
+			clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 30% 100%);
+			border-bottom: 7px solid #a32526;
+		}
+	}
+}
+
+// ................................................................................................
+
+.buketpaper {
+	&__container {
+		background-color: white;
+	}
+	&__title {
+		& h2 {
+			clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 30% 100%);
+			border-bottom: 7px solid #a32526;
+		}
+	}
+}
+
+// ------------------------------------------------------------------------------------------
+
+.maz {
+	width: toRem(400);
+	// height: toRem(100);
+	// border: 1px solid black;
+}
+
+.footer {
+	&__container {
+		background-color: white;
+		padding: toRem(50) toRem(10);
+	}
+	&__box {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: toRem(20);
+		& h3 {
+			color: black;
+			font-size: toRem(50);
+		}
+		& a {
+			font-size: toRem(30);
+		}
+	}
+	&__box--contacts {
+		margin: toRem(50) 0;
+		width: 50%;
+		display: flex;
+		justify-content: space-between;
+		& img {
+			width: toRem(70);
+		}
+	}
+}
