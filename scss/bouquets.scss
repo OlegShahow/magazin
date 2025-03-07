@@ -40,6 +40,11 @@ html {
 	scroll-behavior: smooth;
 }
 
+.wrapper {
+	// padding-bottom: toRem(20);
+	border: 1px solid white;
+}
+
 body {
 	position: relative;
 	background-image: url(../fone/fo1.jpg);
@@ -136,8 +141,8 @@ body {
 			line-height: 1.2;
 			letter-spacing: 2px;
 		}
-		& span{
-			color: rgb(38, 225, 9);	
+		& span {
+			color: rgb(38, 225, 9);
 		}
 	}
 	&__content {
@@ -247,4 +252,43 @@ body {
 	visibility: visible; /* Ставим видимость на видимое */
 	opacity: 1; /* Делаем его видимым */
 	z-index: 1000; /* Повышаем z-index */
+}
+
+// -----------------------------------    .footer   -------------------------------------------------------
+
+.maz {
+	width: toRem(400);
+	// height: toRem(100);
+	// border: 1px solid black;
+}
+
+.footer {
+	&__container {
+		background-color: #8c4f65c3;
+		padding: toRem(50) toRem(10);
+	}
+	&__box {
+		text-align: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: toRem(20);
+		& h3 {
+			color: rgb(247, 246, 246);
+			font-size: toRem(50);
+		}
+		& a {
+			font-size: toRem(30);
+			color: rgb(247, 246, 246);
+		}
+	}
+	&__box--contacts {
+		margin: toRem(50) 0;
+		width: 50%;
+		display: flex;
+		justify-content: space-between;
+		& img {
+			width: toRem(70);
+		}
+	}
 }

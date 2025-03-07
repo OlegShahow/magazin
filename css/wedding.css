@@ -153,6 +153,10 @@ html {
   scroll-behavior: smooth;
 }
 
+.wrapper {
+  border: 1px solid white;
+}
+
 body {
   position: relative;
   background-image: url(../fone/fo4.jpg);
@@ -407,4 +411,48 @@ body {
   visibility: visible; /* Ставим видимость на видимое */
   opacity: 1; /* Делаем его видимым */
   z-index: 1000; /* Повышаем z-index */
+}
+
+.maz {
+  width: 25rem;
+}
+
+.footer__container {
+  background-color: rgba(217, 103, 4, 0.7647058824);
+  padding: 3.125rem 0.625rem;
+}
+.footer__box {
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  row-gap: 1.25rem;
+}
+.footer__box h3 {
+  color: white;
+  font-size: 3.125rem;
+}
+.footer__box a {
+  font-size: 1.875rem;
+  color: white;
+}
+.footer__box--contacts {
+  margin: 3.125rem 0;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.footer__box--contacts img {
+  width: 4.375rem;
 }
