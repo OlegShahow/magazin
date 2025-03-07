@@ -36,10 +36,9 @@ $maxWidth: 1920;
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-
-.reed{
+.reed {
 	margin: toRem(10) 0 0 toRem(10);
-	& p{
+	& p {
 		color: #d9597b;
 		font-size: toRem(24);
 		font-weight: bold;
@@ -49,12 +48,14 @@ $maxWidth: 1920;
 .header__container {
 	position: fixed;
 	top: 0;
-	left: 0;
+	left: 50%;
+	transform: translate(-50%);
 	width: 100%;
 	height: toRem(70);
 	display: flex;
 	align-items: center;
-	justify-content: start;
+	justify-content: space-between;
+	backdrop-filter: blur(40px);
 }
 
 .wrapper {
@@ -95,7 +96,10 @@ $maxWidth: 1920;
 		background-color: #45a049;
 	}
 }
-.cart {
+.cart,
+.cart-inbox,
+.cart-wedd,
+.cart-paper {
 	width: 100%;
 	display: flex;
 	// flex-direction: row;
@@ -103,9 +107,12 @@ $maxWidth: 1920;
 	gap: 20px; /* Пробел между карточками */
 	box-sizing: border-box; /* Чтобы учитывать padding и border */
 
-	box-shadow:inset 0px 0px 10px rgba(0, 0, 0, 0.1);
+	box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
-.cart-items {
+.cart-items,
+.cart-itemsb,
+.cart-itemsp,
+.cart-itemsw {
 	/* Стили для блока всех карточек */
 	width: 100%;
 	height: auto; /* Высота будет зависеть от содержимого */
@@ -115,7 +122,8 @@ $maxWidth: 1920;
 	flex-wrap: wrap;
 	align-items: center;
 	row-gap: toRem(20);
-	justify-content: space-between;
+	justify-content: flex-start;
+	gap: toRem(20);
 	padding: toRem(20);
 	// border: 1px solid white;
 	box-sizing: border-box; /* Чтобы учитывать padding и border */
@@ -126,7 +134,10 @@ $maxWidth: 1920;
 }
 
 /* Стиль для одного товара в корзине  "карточка" */
-.cart-item {
+.cart-item,
+.cart-itemb,
+.cart-itemw,
+.cart-itemp {
 	width: toRem(300);
 	background-color: #f9f9f9;
 	border-radius: 8px;
@@ -145,13 +156,22 @@ $maxWidth: 1920;
 
 /* Стили для классов в карточке ( подписаны в скрипте ) */
 .name,
-.price {
+.nameb,
+.namew,
+.price,
+.pricew,
+.priceb,
+.pricep,
+.namep {
 	color: #4caf50;
 	text-decoration: underline;
 }
 
 /* Стили для кнопки удаления */
-.remove-from-cart {
+.remove-from-cart,
+.remove-from-cartb,
+.remove-from-cartw,
+.remove-from-cartp {
 	margin-top: toRem(30);
 	padding: 8px 16px;
 	background-color: #ff4040;
@@ -180,18 +200,18 @@ $maxWidth: 1920;
 /* Общая стоимость корзины */
 .total-price {
 	color: #4caf50;
+	font-size: toRem(30);
 }
 
-
-.go{
-	& button{
+.go {
+	& button {
 		padding: toRem(10);
-		background-color:#51B687 ;
+		background-color: #51b687;
 		font-size: toRem(24);
 		font-weight: bold;
 		color: white;
-		&:hover{
-			box-shadow: 0px 0px 6px #1a711d ;
+		&:hover {
+			box-shadow: 0px 0px 6px #1a711d;
 		}
 	}
 }

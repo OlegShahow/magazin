@@ -37,6 +37,10 @@ $maxWidth: 1920;
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
+.header__nav--activity{
+text-decoration: underline;
+}
+
 body,
 html {
 	scroll-behavior: smooth;
@@ -98,6 +102,9 @@ body {
 				0px 0px 2px white,
 				2px 2px 6px white,
 				-2px -2px 6px white;
+				&:hover{
+					transform: scale(1.1);
+				}
 		}
 		& img {
 			width: toRem(40);

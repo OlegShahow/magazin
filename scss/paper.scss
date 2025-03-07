@@ -42,7 +42,7 @@ html {
 
 body {
 	position: relative;
-	background-image: url(../fone/fo1.jpg);
+	background-image: url(../fone/fo3.jpg);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -129,15 +129,17 @@ body {
 	}
 	&__text {
 		padding: toRem(50) 0;
-		background-color: #8c4f65c3;
+		background-color: #71c099d2;
 		& p {
 			font-size: toRem(30);
-			color: white;
+			color: black;
 			line-height: 1.2;
 			letter-spacing: 2px;
+		font-weight: 900;
+
 		}
 		& span{
-			color: rgb(38, 225, 9);	
+			color: #596157;	
 		}
 	}
 	&__content {

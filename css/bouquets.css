@@ -249,13 +249,16 @@ body {
 }
 .main__text {
   padding: 3.125rem 0;
-  background-color: #8c4f65;
+  background-color: rgba(140, 79, 101, 0.7647058824);
 }
 .main__text p {
   font-size: 1.875rem;
   color: white;
   line-height: 1.2;
   letter-spacing: 2px;
+}
+.main__text span {
+  color: rgb(38, 225, 9);
 }
 .main__content {
   display: -webkit-box;
