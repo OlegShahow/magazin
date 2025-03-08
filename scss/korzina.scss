@@ -215,6 +215,48 @@ $maxWidth: 1920;
 		}
 	}
 }
+
+// -----------------------------------------------------------------------------------------------
+
+.inserver {
+	padding: toRem(30);
+	text-align: center;
+	// border: 1px solid black;
+
+	&__text {
+		& p {
+			font-size: toRem(30);
+			margin-bottom: toRem(30);
+		}
+	}
+	&__fio {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		row-gap: toRem(20);
+		padding: toRem(30);
+		box-shadow: inset 0px 0px 6px #eae3e3;
+		& label {
+			margin-bottom: toRem(20);
+			font-size: toRem(30);
+		}
+		& input {
+			width: toRem(300);
+			font-size: toRem(26);
+			// background-color: #eae3e3;
+			padding: toRem(10);
+			box-shadow: inset 0px 0px 6px #eae3e3;
+		}
+		/* Стили для placeholder */
+		& input::placeholder {
+			color: #888; /* Цвет текста */
+			font-style: italic; /* Курсив */
+			font-size: toRem(20); /* Размер шрифта */
+		}
+	}
+}
+
 // //////////////////////////////////////////////////////////////////
 
 /* Стили для адаптивности */

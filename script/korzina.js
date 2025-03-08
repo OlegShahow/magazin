@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <p class ="name"><strong>${product.name}</strong></p>
             <p>${product.details}</p>
             <p class ="price">Вартість: ${product.price} UAH</p>
-		            <button class="remove-from-cart" data-index="${index}">Видалити вибір</button>
+		            <button type="button" class="remove-from-cart" data-index="${index}">Видалити вибір</button>
         `;
 
 		// Добавляем товар в корзину
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <p class ="nameb"><strong>${product.name}</strong></p>
             <p>${product.details}</p>
             <p class ="priceb">Вартість: ${product.price} UAH</p>
-		            <button class="remove-from-cartb" data-index="${index}">Видалити вибір</button>
+		            <button type="button" class="remove-from-cartb" data-index="${index}">Видалити вибір</button>
         `;
 
 		// Добавляем товар в корзину
@@ -141,7 +141,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <p class ="namew"><strong>${product.name}</strong></p>
             <p>${product.details}</p>
             <p class ="pricew">Вартість: ${product.price} UAH</p>
-		            <button class="remove-from-cartw" data-index="${index}">Видалити вибір</button>
+		            <button type="button" class="remove-from-cartw" data-index="${index}">Видалити вибір</button>
         `;
 
 		// Добавляем товар в корзину
@@ -198,7 +198,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <p class ="namep"><strong>${product.name}</strong></p>
             <p>${product.details}</p>
             <p class ="pricep">Вартість: ${product.price} UAH</p>
-		            <button class="remove-from-cartp" data-index="${index}">Видалити вибір</button>
+		            <button type="button" class="remove-from-cartp" data-index="${index}">Видалити вибір</button>
         `;
 
 		// Добавляем товар в корзину
@@ -272,4 +272,257 @@ document.addEventListener("DOMContentLoaded", function () {
 	// Отображаем общую сумму в элементе с классом .total-price
 	const totalPriceElement = document.querySelector('.total-price');  // Этот элемент для общей суммы
 	totalPriceElement.innerText = 'Загальна вартість замовлення: ' + totalOrder + ' UAH';
+});
+
+
+
+// --------------------------------  отправка всей формы на сервер ------------------------------------------------
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+// 	// Получаем данные из localStorage для всех корзин
+// 	const cart1 = JSON.parse(localStorage.getItem('cart')) || [];
+// 	const cart2 = JSON.parse(localStorage.getItem('cart-inbox')) || [];
+// 	const cart3 = JSON.parse(localStorage.getItem('cart-wedd')) || [];
+// 	const cart4 = JSON.parse(localStorage.getItem('cart-paper')) || [];
+
+// 	// Массив для хранения всех товаров
+// 	const allCartProducts = [...cart1, ...cart2, ...cart3, ...cart4];
+
+// 	// Суммируем общую стоимость
+// 	let totalOrder = 0;
+
+// 	// Формируем массив для отправки и считаем общую сумму
+// 	const cartData = allCartProducts.map(product => {
+// 		totalOrder += product.price;  // Суммируем цену каждого товара
+
+// 		// Создаем объект с нужными данными для каждого товара
+// 		return {
+// 			name: product.name,
+// 			details: product.details,
+// 			price: product.price
+// 		};
+// 	});
+
+// 	// Заполняем скрытое поле для товаров
+// 	document.getElementById("cart_products").value = JSON.stringify(cartData);
+
+// 	// Заполняем скрытое поле для общей стоимости
+// 	document.getElementById("total_price").value = totalOrder;
+
+// 	// Обновляем отображение общей суммы на странице
+// 	const totalPriceElement = document.querySelector('.total-price');
+// 	totalPriceElement.innerText = 'Загальна вартість замовлення: ' + totalOrder + ' UAH';
+// });
+
+
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+// 	// Получаем данные из localStorage для всех корзин
+// 	const cart1 = JSON.parse(localStorage.getItem('cart')) || [];
+// 	const cart2 = JSON.parse(localStorage.getItem('cart-inbox')) || [];
+// 	const cart3 = JSON.parse(localStorage.getItem('cart-wedd')) || [];
+// 	const cart4 = JSON.parse(localStorage.getItem('cart-paper')) || [];
+
+// 	// Массив для хранения всех товаров
+// 	const allCartProducts = [...cart1, ...cart2, ...cart3, ...cart4];
+
+// 	// Суммируем общую стоимость
+// 	let totalOrder = 0;
+
+// 	// Формируем массив для отправки и считаем общую сумму
+// 	const cartData = allCartProducts.map(product => {
+// 		totalOrder += product.price;  // Суммируем цену каждого товара
+
+// 		// Создаем объект с нужными данными для каждого товара
+// 		return {
+// 			name: product.name,
+// 			details: product.details,
+// 			price: product.price
+// 		};
+// 	});
+
+// 	// Заполняем скрытое поле для товаров
+// 	document.getElementById("cart_products").value = JSON.stringify(cartData);
+
+// 	// Заполняем скрытое поле для общей стоимости
+// 	document.getElementById("total_price").value = totalOrder;
+
+// 	// Обновляем отображение общей суммы на странице
+// 	const totalPriceElement = document.querySelector('.total-price');
+// 	totalPriceElement.innerText = 'Загальна вартість замовлення: ' + totalOrder + ' UAH';
+// });
+
+
+
+//
+
+
+// document.addEventListener("DOMContentLoaded", function () {
+// 	// Получаем данные из localStorage для всех корзин
+// 	const cart1 = JSON.parse(localStorage.getItem('cart')) || [];
+// 	const cart2 = JSON.parse(localStorage.getItem('cart-inbox')) || [];
+// 	const cart3 = JSON.parse(localStorage.getItem('cart-wedd')) || [];
+// 	const cart4 = JSON.parse(localStorage.getItem('cart-paper')) || [];
+
+// 	// Массив для хранения всех товаров
+// 	const allCartProducts = [...cart1, ...cart2, ...cart3, ...cart4];
+
+// 	// Суммируем общую стоимость
+// 	let totalOrder = 0;
+
+// 	// Формируем массив для отправки и считаем общую сумму
+// 	const cartData = allCartProducts.map(product => {
+// 		totalOrder += product.price;  // Суммируем цену каждого товара
+// 		return {
+// 			name: product.name,
+// 			details: product.details,
+// 			price: product.price
+// 		};
+// 	});
+
+// 	// Заполняем скрытое поле для товаров
+// 	document.getElementById("cart_products").value = JSON.stringify(cartData);
+
+// 	// Заполняем скрытое поле для общей стоимости
+// 	document.getElementById("total_price").value = totalOrder;
+
+// 	// Обновляем отображение общей суммы на странице
+// 	const totalPriceElement = document.querySelector('.total-price');
+// 	totalPriceElement.innerText = 'Загальна вартість замовлення: ' + totalOrder + ' UAH';
+
+// 	// Добавляем обработчик отправки формы через fetch
+// 	const form = document.getElementById('cart-forma');
+// 	form.addEventListener('submit', async function (event) {
+// 		event.preventDefault(); // Отменяем стандартную отправку формы
+
+// 		const name = document.getElementById('name').value; // Получаем имя
+// 		const phone = document.getElementById('phone').value; // Получаем телефон
+// 		const cartData = JSON.parse(document.getElementById('cart_products').value); // Получаем данные корзины
+
+// 		try {
+// 			// Отправляем данные на Pipedream с использованием fetch
+// 			const response = await fetch('https://eoz31enr80vfiud.m.pipedream.net', {
+// 				method: 'POST',
+// 				headers: {
+// 					'Content-Type': 'application/json',
+// 				},
+// 				body: JSON.stringify({
+// 					cart: cartData,
+// 					total: totalOrder,
+// 					name: name,
+// 					phone: phone
+// 				}),
+// 			});
+
+// 			// Проверяем, что ответ успешный
+// 			if (response.ok) {
+// 				const result = await response.json();
+// 				console.log(result); // Выводим результат в консоль для отладки
+
+// 				// Показываем сообщение об успехе
+// 				alert('Данные успешно отправлены!');
+
+// 				// Очистка корзины и формы
+// 				localStorage.removeItem('cart');
+// 				localStorage.removeItem('cart-inbox');
+// 				localStorage.removeItem('cart-wedd');
+// 				localStorage.removeItem('cart-paper');
+
+// 				form.reset(); // Очистка формы
+// 				document.querySelector('.total-price').innerText = 'Загальна вартість замовлення : 0 UAH'; // Обновление суммы
+// 			} else {
+// 				throw new Error('Ошибка при отправке данных');
+// 			}
+// 		} catch (error) {
+// 			console.error('Ошибка при отправке данных:', error);
+// 			alert('Ошибка при отправке данных!');
+// 		}
+// 	});
+// });
+
+
+
+
+//
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+	// Получаем данные из localStorage для всех корзин
+	const cart1 = JSON.parse(localStorage.getItem('cart')) || [];
+	const cart2 = JSON.parse(localStorage.getItem('cart-inbox')) || [];
+	const cart3 = JSON.parse(localStorage.getItem('cart-wedd')) || [];
+	const cart4 = JSON.parse(localStorage.getItem('cart-paper')) || [];
+
+	// Массив для хранения всех товаров
+	const allCartProducts = [...cart1, ...cart2, ...cart3, ...cart4];
+
+	// Суммируем общую стоимость
+	let totalOrder = 0;
+
+	// Формируем массив для отправки и считаем общую сумму
+	const cartData = allCartProducts.map(product => {
+		totalOrder += product.price;  // Суммируем цену каждого товара
+		return {
+			name: product.name,
+			details: product.details,
+			price: product.price
+		};
+	});
+
+	// Заполняем скрытое поле для товаров
+	document.getElementById("cart_products").value = JSON.stringify(cartData);
+
+	// Заполняем скрытое поле для общей стоимости
+	document.getElementById("total_price").value = totalOrder;
+
+	// Обновляем отображение общей суммы на странице
+	const totalPriceElement = document.querySelector('.total-price');
+	totalPriceElement.innerText = 'Загальна вартість замовлення: ' + totalOrder + ' UAH';
+
+	// Добавляем обработчик отправки формы через fetch
+	const form = document.getElementById('cart-forma');
+	form.addEventListener('submit', async function (event) {
+		event.preventDefault(); // Отменяем стандартную отправку формы
+
+		const name = document.getElementById('name').value; // Получаем имя
+		const phone = document.getElementById('phone').value; // Получаем телефон
+		const cartData = JSON.parse(document.getElementById('cart_products').value); // Получаем данные корзины
+
+		try {
+			// Отправляем данные на Pipedream с использованием fetch
+			const response = await fetch('https://eoz31enr80vfiud.m.pipedream.net', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({
+					cart: cartData,
+					total: totalOrder,
+					name: name,
+					phone: phone
+				}),
+			});
+
+			// Проверяем, что ответ успешный
+			if (response.ok) {
+				const result = await response.text();  // Чтение ответа как текст, чтобы избежать ошибок в случае не-JSON ответа
+				console.log(result); // Выводим результат в консоль для отладки
+
+				// Показываем сообщение об успехе
+				alert('Данные успешно отправлены!');
+
+				// Очистка формы
+				form.reset(); // Очистка формы
+				document.querySelector('.total-price').innerText = 'Загальна вартість замовлення : 0 UAH'; // Обновление суммы
+			} else {
+				throw new Error(`Ошибка при отправке данных: ${response.statusText}`);
+			}
+		} catch (error) {
+			console.error('Ошибка при отправке данных:', error);
+			alert('Ошибка при отправке данных!');
+		}
+	});
 });

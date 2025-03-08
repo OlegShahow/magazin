@@ -23,62 +23,153 @@
 			</div>
 		</header>
 
+		<!-- <form action="https://eoz31enr80vfiud.m.pipedream.net" method="POST"> -->
+		<!-- это не надо так как отправляем через "фэтч" в скрипте -->
 
-		<div class="wrapper__container">
-			<h2>Кошик</h2>
 
 
-			<!-- букеты -->
-			<div class="cart">
-				<div class="bouq reed">
-					<p>Букети</p>
+		<!-- <form id="cart-form"> -->
+
+			<!-- <div class="wrapper__container"> -->
+				<!-- <h2>Кошик</h2> -->
+
+
+				<!-- букеты -->
+				<!-- <div class="cart"> -->
+					<!-- <div class="bouq reed"> -->
+						<!-- <p>Букети</p> -->
+					<!-- </div> -->
+					<!-- <div class="cart-items"> -->
+						<!-- Здесь будут отображаться добавленные товары -->
+					<!-- </div> -->
+
+				<!-- </div> -->
+
+
+				<!-- в коробке -->
+				<!-- <div class="cart-inbox"> -->
+					<!-- <div class="bouq reed"> -->
+						<!-- <p>Букети в коробці</p> -->
+					<!-- </div> -->
+					<!-- <div class="cart-itemsb"> -->
+						<!-- Здесь будут отображаться добавленные товары -->
+					<!-- </div> -->
+
+				<!-- </div> -->
+
+
+				<!-- свадебные -->
+				<!-- <div class="cart-wedd"> -->
+					<!-- <div class="bouq reed"> -->
+						<!-- <p>Весільні букети</p> -->
+					<!-- </div> -->
+					<!-- <div class="cart-itemsw"> -->
+						<!-- Здесь будут отображаться добавленные товары -->
+					<!-- </div> -->
+
+				<!-- </div> -->
+
+
+				<!-- бумажные -->
+				<!-- <div class="cart-paper"> -->
+					<!-- <div class="bouq reed"> -->
+						<!-- <p>Паперові букети</p> -->
+					<!-- </div> -->
+					<!-- <div class="cart-itemsp"> -->
+						<!-- Здесь будут отображаться добавленные товары -->
+					<!-- </div> -->
+
+				<!-- </div> -->
+
+				<!-- <p class="total-price"> Загальна вартість замовлення : 0 UAH</p> Общая сумма -->
+
+				<!-- <div class="inserver"> -->
+					<!-- <div class="inserver__text"> -->
+						<!-- <p>Для оформлення замовлення - введіть ваші данні :</p> -->
+					<!-- </div> -->
+					<!-- <div class="inserver__fio"> -->
+						<!-- <label for="name">Iмя:</label> -->
+						<!-- <input type="text" id="name" name="name" placeholder="Введіть ваше iмя" required> -->
+
+						<!-- <label for="phone">Номер телефона:</label> -->
+						<!-- <input type="tel" id="phone" name="phone" placeholder="+ 3 8000 0000000" required> -->
+					<!-- </div> -->
+				<!-- </div> -->
+
+				<!-- Скрытые поля для товаров для отправки на сервер -->
+				<!-- <div style="display:none;"> -->
+					<!-- <input type="hidden" name="cart_products" id="cart_products"> -->
+					<!-- <input type="hidden" name="total_price" id="total_price"> -->
+				<!-- </div> -->
+
+
+
+				<!-- <div class="go"><button type="submit">ВІДПРАВИТИ ЗАМОВЛЕННЯ</button></div> -->
+			<!-- </div> -->
+
+		<!-- </form> -->
+
+
+
+
+
+		<form id="cart-forma">
+			<div class="wrapper__container">
+				<h2>Кошик</h2>
+		
+				<div class="cart">
+					<div class="bouq reed">
+						<p>Букети</p>
+					</div>
+					<div class="cart-items"></div>
 				</div>
-				<div class="cart-items">
-					<!-- Здесь будут отображаться добавленные товары -->
+		
+				<div class="cart-inbox">
+					<div class="bouq reed">
+						<p>Букети в коробці</p>
+					</div>
+					<div class="cart-itemsb"></div>
 				</div>
-
+		
+				<div class="cart-wedd">
+					<div class="bouq reed">
+						<p>Весільні букети</p>
+					</div>
+					<div class="cart-itemsw"></div>
+				</div>
+		
+				<div class="cart-paper">
+					<div class="bouq reed">
+						<p>Паперові букети</p>
+					</div>
+					<div class="cart-itemsp"></div>
+				</div>
+		
+				<p class="total-price">Загальна вартість замовлення : 0 UAH</p>
+		
+				<div class="inserver">
+					<div class="inserver__text">
+						<p>Для оформлення замовлення - введіть ваші данні :</p>
+					</div>
+					<div class="inserver__fio">
+						<label for="name">Iмя:</label>
+						<input type="text" id="name" name="name" placeholder="Введіть ваше iмя" required>
+		
+						<label for="phone">Номер телефона:</label>
+						<input type="tel" id="phone" name="phone" placeholder="+ 3 8000 0000000" required>
+					</div>
+				</div>
+		
+				<div style="display:none;">
+					<input type="hidden" name="cart_products" id="cart_products">
+					<input type="hidden" name="total_price" id="total_price">
+				</div>
+		
+				<div class="go"><button type="submit">ВІДПРАВИТИ ЗАМОВЛЕННЯ</button></div>
 			</div>
+		</form>
 
 
-			<!-- в коробке -->
-			<div class="cart-inbox">
-				<div class="bouq reed">
-					<p>Букети в коробці</p>
-				</div>
-				<div class="cart-itemsb">
-					<!-- Здесь будут отображаться добавленные товары -->
-				</div>
-
-			</div>
-
-
-			<!-- свадебные -->
-			<div class="cart-wedd">
-				<div class="bouq reed">
-					<p>Весільні букети</p>
-				</div>
-				<div class="cart-itemsw">
-					<!-- Здесь будут отображаться добавленные товары -->
-				</div>
-
-			</div>
-
-
-			<!-- бумажные -->
-			<div class="cart-paper">
-				<div class="bouq reed">
-					<p>Паперові букети</p>
-				</div>
-				<div class="cart-itemsp">
-					<!-- Здесь будут отображаться добавленные товары -->
-				</div>
-
-			</div>
-
-
-			<p class="total-price"> Загальна вартість замовлення : 0 UAH</p> <!-- Общая сумма -->
-			<div class="go"><button type="submit">ВІДПРАВИТИ ЗАМОВЛЕННЯ</button></div>
-		</div>
 	</div>
 
 
