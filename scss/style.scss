@@ -37,8 +37,8 @@ $maxWidth: 1920;
 
 // \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
-.header__nav--activity{
-text-decoration: underline;
+.header__nav--activity {
+	text-decoration: underline;
 }
 
 body,
@@ -69,8 +69,21 @@ body {
 		width: 100%;
 		transform: rotate(180deg);
 	}
+	@media (max-width: toRem(600)) {
+		bottom: toRem(10);
+		right: toRem(10);
+	}
 }
-
+.header__body .kr {
+	display: none;
+	// visibility: hidden;
+	@media (max-width: toRem(600)) {
+		display: block;
+		position: absolute;
+		top: toRem(20);
+		right: toRem(20);
+	}
+}
 .header {
 	&__body {
 		position: fixed;
@@ -83,15 +96,25 @@ body {
 		backdrop-filter: blur(10px); /* Размытие фона */
 		z-index: 100;
 		// border: 1px solid white;
+		@media (max-width: toRem(600)) {
+			padding: 0 toRem(30);
+		}
+		& img {
+			display: none;
+			width: toRem(50);
+			@media (max-width: toRem(600)) {
+				display: block;
+			}
+		}
 	}
 	&__container {
 		width: 100%;
-		// border: 1px solid white;
 	}
 	&__nav {
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
+		transition: 0.3s ease-in-out;
 		& p {
 			display: flex;
 			align-items: center;
@@ -102,15 +125,35 @@ body {
 				0px 0px 2px white,
 				2px 2px 6px white,
 				-2px -2px 6px white;
-				&:hover{
-					transform: scale(1.1);
-				}
+			&:hover {
+				transform: scale(1.1);
+			}
+
+			@media (max-width: toRem(600)) {
+				font-size: toRem(40);
+				text-shadow: none;
+			}
 		}
 		& img {
+			display: block;
 			width: toRem(40);
+			z-index: 999999999;
+		}
+
+		@media (max-width: toRem(600)) {
+			position: absolute;
+			top: -100vh;
+			left: 0;
+			width: 100%;
+			height: 100vh;
+			padding: toRem(100) 0;
+			flex-direction: column;
+			overflow: auto;
+			background-color: #ffcc8d;
 		}
 	}
 }
+
 .main {
 	&__body {
 		background-image: url(../fone/fonemain.jpeg);
@@ -120,6 +163,9 @@ body {
 		background-attachment: fixed;
 		width: 100%;
 		height: 100vh;
+		@media (max-width: toRem(600)) {
+			height: 100%;
+		}
 	}
 	&__container {
 		height: 100%;
@@ -137,7 +183,7 @@ body {
 			font-family: "PlayfairDisplay-Regular";
 			text-transform: uppercase;
 			color: #f5ebeb;
-			@include adaptiveValue("font-size", 90, 50);
+			@include adaptiveValue("font-size", 90, 70);
 			font-weight: 900;
 			letter-spacing: 2px;
 			text-shadow:
@@ -155,7 +201,7 @@ body {
 				0px 0px 2px black,
 				2px 2px 20px white,
 				-2px -2px 20px white;
-			@include adaptiveValue("font-size", 40, 20);
+			@include adaptiveValue("font-size", 40, 26);
 			font-family: "Shantell Sans", cursive;
 			// font-family: "Caveat", cursive;
 			font-style: italic;
@@ -171,7 +217,7 @@ body {
 		& p {
 			text-transform: uppercase;
 			color: #f5ebeb;
-			@include adaptiveValue("font-size", 40, 20);
+			@include adaptiveValue("font-size", 40, 30);
 			font-family: "PlayfairDisplay-Italic";
 			margin-bottom: toRem(30);
 			font-weight: 900;
@@ -186,6 +232,11 @@ body {
 				text-shadow: 0px 0px 16px white;
 			}
 		}
+		@media (max-width: toRem(1300)) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
 	}
 	&__box--textleft {
 		// border: 1px solid white;
@@ -198,7 +249,7 @@ body {
 		& p {
 			padding: toRem(10);
 			backdrop-filter: blur(10px);
-			@include adaptiveValue("font-size", 40, 20);
+			@include adaptiveValue("font-size", 40, 30);
 			font-family: "Shantell Sans", cursive;
 			// font-family: "Caveat", cursive;
 			font-style: italic;
@@ -269,6 +320,7 @@ body {
 }
 .flbtn {
 	margin-left: toRem(20);
+	margin-top: toRem(20);
 	padding: toRem(10);
 	font-size: toRem(24);
 	display: flex;
@@ -287,6 +339,14 @@ u {
 	padding-left: toRem(10);
 }
 
+.flimg {
+	width: 100%;
+
+	& img {
+		width: 80%;
+	}
+}
+
 // ............................................   .buket    ......................................................................
 
 .main {
@@ -298,6 +358,9 @@ u {
 		& h2 {
 			clip-path: polygon(0% 0%, 50% 0%, 100% 100%, 50% 100%);
 			border-bottom: 7px solid #a32526;
+			@media (max-width: toRem(1200)) {
+				clip-path: none;
+			}
 		}
 	}
 
@@ -316,6 +379,9 @@ u {
 		& h2 {
 			clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 20% 100%);
 			border-bottom: 7px solid #a32526;
+			@media (max-width: toRem(1200)) {
+				clip-path: none;
+			}
 		}
 	}
 }
@@ -329,6 +395,9 @@ u {
 		& h2 {
 			clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 30% 100%);
 			border-bottom: 7px solid #a32526;
+			@media (max-width: toRem(1200)) {
+				clip-path: none;
+			}
 		}
 	}
 }
@@ -343,6 +412,9 @@ u {
 		& h2 {
 			clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 30% 100%);
 			border-bottom: 7px solid #a32526;
+			@media (max-width: toRem(1200)) {
+				clip-path: none;
+			}
 		}
 	}
 }
@@ -357,6 +429,9 @@ u {
 		& h2 {
 			clip-path: polygon(0% 0%, 80% 0%, 100% 100%, 30% 100%);
 			border-bottom: 7px solid #a32526;
+			@media (max-width: toRem(1200)) {
+				clip-path: none;
+			}
 		}
 	}
 }
@@ -395,6 +470,13 @@ u {
 		justify-content: space-between;
 		& img {
 			width: toRem(70);
+			@media (max-width: toRem(700)) {
+				// width: toRem(40);
+			}
+		}
+		@media (max-width: toRem(700)) {
+			flex-wrap: wrap;
+			row-gap: toRem(20);
 		}
 	}
 }

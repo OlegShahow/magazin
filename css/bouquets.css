@@ -173,6 +173,13 @@ body {
   width: 3.125rem;
   bottom: 3.125rem;
   right: 2.5rem;
+  z-index: 9999;
+}
+@media (max-width: 50rem) {
+  .up {
+    bottom: 0.625rem;
+    right: 0.625rem;
+  }
 }
 .up img {
   width: 100%;
@@ -194,6 +201,16 @@ body {
           backdrop-filter: blur(16px); /* Размытие фона */
   z-index: 10000;
 }
+@media (min-width: 120rem) {
+  .header__body {
+    height: 70px;
+  }
+}
+@media (max-width: 120rem) and (max-width: 1920px) {
+  .header__body {
+    height: calc(100px + -51 * (100vw - 767px) / 1920);
+  }
+}
 .header__container {
   width: 100%;
 }
@@ -206,6 +223,9 @@ body {
           align-items: center;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.625rem;
 }
 .header__nav p {
   display: -webkit-box;
@@ -264,7 +284,14 @@ body {
 .main__text span {
   color: rgb(38, 225, 9);
 }
+@media (max-width: 37.5rem) {
+  .main__text {
+    text-align: start;
+    padding: 3.125rem 0.625rem;
+  }
+}
 .main__content {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -277,6 +304,40 @@ body {
       -ms-flex-pack: justify;
           justify-content: space-between;
   row-gap: 1.25rem;
+}
+@media (max-width: 90.625rem) and (min-width: 120rem) {
+  .main__content {
+    padding-top: 70px;
+  }
+}
+@media (max-width: 90.625rem) and (max-width: 120rem) and (max-width: 1920px) {
+  .main__content {
+    padding-top: calc(120px + -85 * (100vw - 767px) / 1920);
+  }
+}
+@media (max-width: 37.5rem) {
+  .main__content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.main .main__content--text {
+  display: none;
+}
+@media (max-width: 90.625rem) {
+  .main .main__content--text {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+        -ms-transform: translate(-50%);
+            transform: translate(-50%);
+    display: block;
+  }
+}
+.main .main__content--text p {
+  font-size: 1.625rem;
 }
 .main__card {
   position: relative;
@@ -448,6 +509,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  row-gap: 1.875rem;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
