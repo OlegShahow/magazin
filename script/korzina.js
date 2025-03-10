@@ -389,3 +389,29 @@ buckbtns.forEach(b => {
 		}
 	})
 })
+
+
+// ------   Этот код добавляет дополнительную валидацию на стороне клиента перед отправкой формы.
+
+
+document.querySelector("form").addEventListener("submit", function (e) {
+	// Валидация имени
+	const name = document.getElementById("name");
+	const namePattern = /^[А-Яа-яЁёІіЇїЄє\s]+$/;
+	if (!namePattern.test(name.value)) {
+		alert("Имя должно содержать только кириллицу и пробелы.");
+		e.preventDefault();
+		return;
+	}
+
+	// Валидация номера телефона
+	const phone = document.getElementById("phone");
+	const phonePattern = /^\+3\s\d{4}\s\d{7}$/;
+	if (!phonePattern.test(phone.value)) {
+		alert("Номер телефона должен быть в формате + 3 8000 0000000.");
+		e.preventDefault();
+		return;
+	}
+});
+
+// ------------------------------------------------------------------------------------

@@ -69,10 +69,14 @@
 					</div>
 					<div class="inserver__fio">
 						<label for="name">Iмя:</label>
-						<input type="text" id="name" name="name" placeholder="Введіть ваше iмя" required>
+						<input type="text" id="name" name="name" placeholder="Введіть ваше iмя" required
+							pattern="^[А-Яа-яЁёІіЇїЄєА-Яа-яЁёІіЇїЄє\s]+$" title="Только кириллица и пробелы">
+						<!--pattern=    ограничивает ввод только кириллицей и пробелами. -->
 
 						<label for="phone">Номер телефона:</label>
-						<input type="tel" id="phone" name="phone" placeholder="+ 3 8000 0000000" required>
+						<input type="tel" id="phone" name="phone" placeholder=" 3 8000 0000000" required
+							pattern="^\+3\s\d{4}\s\d{7}$" title="Номер телефона должен быть в формате + 3 8000 0000000">
+						<!--pattern=    Здесь \+3 — это символ "плюс" и цифра 3, затем четыре цифры, пробел, и семь цифр. -->
 					</div>
 				</div>
 
