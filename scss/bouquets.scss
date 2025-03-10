@@ -77,7 +77,6 @@ body {
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: toRem(70);
 		@include adaptiveValue("height", 70, 100);
 		display: flex;
 		align-items: center;
@@ -116,6 +115,9 @@ body {
 }
 .header__nav--activity {
 	text-decoration: underline;
+	@media (max-width: toRem(600)) {
+		display: none;
+	}
 }
 // ---------------------------------------------------------------------------------------------------
 
@@ -166,7 +168,7 @@ body {
 		row-gap: toRem(20);
 		@media (max-width: toRem(1450)) {
 			// padding-top: toRem(70);
-			@include adaptiveValue ("padding-top" , 70, 120);
+			@include adaptiveValue("padding-top", 70, 120);
 		}
 		@media (max-width: toRem(600)) {
 			justify-content: center;
@@ -327,7 +329,6 @@ body {
 		& img {
 			width: toRem(70);
 		}
-		@media (max-width: toRem(800)) {
-		}
+	
 	}
 }

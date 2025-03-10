@@ -45,22 +45,57 @@ $maxWidth: 1920;
 	}
 }
 
+.open {
+	width: toRem(50);
+	display: none;
+	@media (max-width: toRem(970)) {
+		display: block;
+		margin-top: toRem(20);
+		margin-left: toRem(20);
+	}
+}
 .header__container {
+	position: relative;
 	position: fixed;
 	top: 0;
 	left: 50%;
 	transform: translate(-50%);
 	width: 100%;
 	height: toRem(70);
+	// @include adaptiveValue("height", 70, 100);
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: toRem(10);
 	backdrop-filter: blur(40px);
-}
 
+	@media (max-width: toRem(970)) {
+		position: absolute;
+		margin-top: -150vh;
+		width: 100%;
+		height: 100vh;
+		flex-direction: column;
+		justify-content: center;
+		row-gap: toRem(50);
+		overflow: auto;
+		background-color: #51b687;
+		transition: 0.5s ease-in-out;
+	}
+}
+.kr {
+	position: absolute;
+	top: toRem(20);
+	right: toRem(20);
+	width: toRem(50);
+	display: none;
+	@media (max-width: toRem(970)) {
+		display: block;
+	}
+}
 .wrapper {
 	&__container {
-		margin-top: toRem(100);
+		@include adaptiveValue("margin-top", 200, 70);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -71,8 +106,8 @@ $maxWidth: 1920;
 	}
 	& h2 {
 		color: #d9597b;
-		font-size: toRem(34);
-		@include adaptiveValue("font-size", 70, 30);
+		font-size: toRem(70);
+		// @include adaptiveValue("font-size", 70, 30);
 		font-weight: 900;
 		text-shadow:
 			0px 0px 2px white,
@@ -84,7 +119,7 @@ $maxWidth: 1920;
 	padding: 10px 20px;
 	background-color: #4caf50;
 	color: #fff;
-	font-size: 16px;
+	font-size: toRem(16);
 	text-align: center;
 	text-decoration: none;
 	border: none;
@@ -94,6 +129,9 @@ $maxWidth: 1920;
 
 	&:hover {
 		background-color: #45a049;
+	}
+	@media (max-width: toRem(970)) {
+		font-size: toRem(30);
 	}
 }
 .cart,
@@ -254,27 +292,5 @@ $maxWidth: 1920;
 			font-style: italic; /* Курсив */
 			font-size: toRem(20); /* Размер шрифта */
 		}
-	}
-}
-
-// //////////////////////////////////////////////////////////////////
-
-/* Стили для адаптивности */
-@media screen and (max-width: 768px) {
-	.wrapper__container {
-		width: 100%;
-		padding: 15px;
-	}
-
-	.cart-item {
-		padding: 10px;
-	}
-
-	.cart-total {
-		font-size: 16px;
-	}
-
-	.buck {
-		padding: 8px 16px;
 	}
 }

@@ -59,6 +59,11 @@ body {
 	width: toRem(50);
 	bottom: toRem(50);
 	right: toRem(40);
+	z-index: 9999;
+	@media (max-width: toRem(800)) {
+		bottom: toRem(10);
+		right: toRem(10);
+	}
 	& img {
 		width: 100%;
 	}
@@ -70,7 +75,7 @@ body {
 		top: 0;
 		left: 0;
 		width: 100%;
-		height: toRem(70);
+		@include adaptiveValue("height", 70, 100);
 		display: flex;
 		align-items: center;
 		backdrop-filter: blur(16px); /* Размытие фона */
@@ -85,6 +90,8 @@ body {
 		display: flex;
 		align-items: center;
 		justify-content: space-around;
+		flex-wrap: wrap;
+		gap: toRem(10);
 		& p {
 			display: flex;
 			align-items: center;
@@ -106,6 +113,9 @@ body {
 }
 .header__nav--activity {
 	text-decoration: underline;
+	@media (max-width: toRem(600)) {
+		display: none;
+	}
 }
 // ---------------------------------------------------------------------------------------------------
 
@@ -143,13 +153,26 @@ body {
 		& span {
 			color: rgb(38, 225, 9);
 		}
+
+		@media (max-width: toRem(600)) {
+			text-align: start;
+			padding: toRem(50) toRem(10);
+		}
 	}
 	&__content {
+		position: relative;
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: space-between;
 		row-gap: toRem(20);
+		@media (max-width: toRem(1450)) {
+			// padding-top: toRem(70);
+			@include adaptiveValue("padding-top", 70, 120);
+		}
+		@media (max-width: toRem(600)) {
+			justify-content: center;
+		}
 	}
 	&__card {
 		position: relative;
@@ -246,6 +269,21 @@ body {
 	}
 }
 
+.main__content--text {
+	display: none;
+	@media (max-width: toRem(1450)) {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translate(-50%);
+		display: block;
+	}
+	& p {
+		font-size: toRem(26);
+		color: white;
+	}
+}
+
 /* Показываем контент при наведении на изображение */
 .main__card:hover .card__content {
 	visibility: visible; /* Ставим видимость на видимое */
@@ -286,6 +324,8 @@ body {
 		width: 50%;
 		display: flex;
 		justify-content: space-between;
+		flex-wrap: wrap;
+		row-gap: toRem(30);
 		& img {
 			width: toRem(70);
 		}

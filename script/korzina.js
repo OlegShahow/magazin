@@ -357,3 +357,35 @@ document.addEventListener("DOMContentLoaded", function () {
 		}
 	});
 });
+
+
+// --------------------------------------  BURGER  -----------------------------------------------
+
+const openbtn = document.querySelector(".open");
+const krbtn = document.querySelector(".kr");
+const headerContainer = document.querySelector(".header__container");
+
+
+openbtn.addEventListener("click", () => {
+	headerContainer.style.marginTop = "0";
+	document.body.style.overflow = 'hidden';
+})
+
+
+
+krbtn.addEventListener("click", () => {
+	headerContainer.style.marginTop = "-150vh";
+	document.body.style.overflow = 'auto';
+})
+
+
+const buckbtns = document.querySelectorAll(".buck");
+
+buckbtns.forEach(b => {
+	b.addEventListener("click", () => {
+		if (headerContainer.style.marginTop = "0") {
+			headerContainer.style.marginTop = "-150vh";
+			document.body.style.overflow = 'auto';
+		}
+	})
+})
